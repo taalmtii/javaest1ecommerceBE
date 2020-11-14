@@ -1,5 +1,6 @@
 package ee.sda.javaest1ecommerce.entities;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Builder
 public class Product {
 
     @Id
