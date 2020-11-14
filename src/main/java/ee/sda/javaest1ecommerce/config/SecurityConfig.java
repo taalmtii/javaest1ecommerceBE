@@ -2,6 +2,7 @@ package ee.sda.javaest1ecommerce.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -18,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/product/create").authenticated()
+                .antMatchers(HttpMethod.POST, "/product/create").authenticated()
                 .anyRequest().permitAll().and().csrf().disable()
                 .httpBasic().and()
         .sessionManagement()

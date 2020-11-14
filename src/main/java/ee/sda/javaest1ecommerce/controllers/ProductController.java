@@ -5,6 +5,9 @@ import ee.sda.javaest1ecommerce.dtos.ProductOutDTO;
 import ee.sda.javaest1ecommerce.entities.Product;
 import ee.sda.javaest1ecommerce.services.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -38,5 +41,6 @@ public class ProductController {
     ProductOutDTO createProduct(@RequestBody ProductInDTO productInDTO){
         return service.save(productInDTO);
     }
+
 
 }
