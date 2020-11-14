@@ -21,12 +21,11 @@ public class ProductService {
     }
 
     public ProductOutDTO save(ProductInDTO productInDTO){
-        Product product = Product.builder()
-                .description(productInDTO.getDescription())
-                .name(productInDTO.getName())
-                .price(productInDTO.getPrice())
-                .rating(productInDTO.getRating())
-                .build();
+        Product product = new Product();
+                product.setName(productInDTO.getName());
+                product.setDescription(productInDTO.getDescription());
+                product.setPrice(productInDTO.getPrice());
+                product.setRating(productInDTO.getRating());
         repository.save(product);
         return ProductOutDTO.builder()
                 .rating(product.getRating())

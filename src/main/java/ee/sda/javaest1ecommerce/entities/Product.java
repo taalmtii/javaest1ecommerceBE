@@ -1,8 +1,6 @@
 package ee.sda.javaest1ecommerce.entities;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +11,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 
     @Id
