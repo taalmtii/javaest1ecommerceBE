@@ -5,10 +5,7 @@ import ee.sda.javaest1ecommerce.dtos.ProductOutDTO;
 import ee.sda.javaest1ecommerce.entities.Product;
 import ee.sda.javaest1ecommerce.services.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +34,7 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    ProductOutDTO createProduct(ProductInDTO productInDTO){
+    ProductOutDTO createProduct(@RequestBody ProductInDTO productInDTO){
         return service.save(productInDTO);
     }
 
