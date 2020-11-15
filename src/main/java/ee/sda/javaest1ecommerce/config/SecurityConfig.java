@@ -20,6 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/product/create").authenticated()
+                .antMatchers(HttpMethod.POST, "/validatelogin").authenticated()
                 .anyRequest().permitAll().and().csrf().disable()
                 .httpBasic().and()
         .sessionManagement()
